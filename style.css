@@ -1,0 +1,20 @@
+#game {
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#image {
+  width: inherit;
+  height: inherit;
+}
+
+#container {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  display: grid;
+  gap: 0;
+  box-sizing: border-box;
+}
