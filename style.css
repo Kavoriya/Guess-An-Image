@@ -1,13 +1,18 @@
+body {
+  width: 800px;
+  margin: 20px auto;
+}
+
 #game {
   width: 600px;
   height: 600px;
-  margin: auto;
-  margin-top: 10px;
+  margin: 0 auto;
 }
 
 #image {
   width: inherit;
   height: inherit;
+  display: none;
 }
 
 #container {
