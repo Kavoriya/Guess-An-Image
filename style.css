@@ -18,3 +18,16 @@
   gap: 0;
   box-sizing: border-box;
 }
+
+.square {
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+}
