@@ -1,4 +1,14 @@
 let container = document.getElementById("container");
+let image = document.getElementById("image");
+let images = [];
+collectImages();
+startGame();
+
+function startGame() {
+  createGrid(5, 5);
+  let randomImage = Math.floor(Math.random() * 3);
+  image.src = images[randomImage].image;
+}
 
 function createGrid(xAxis, yAxis) {
   container.style.gridTemplateColumns = `repeat(${xAxis}, ${600/xAxis}px)`;
@@ -19,4 +29,11 @@ function createGrid(xAxis, yAxis) {
   }
 };
 
-createGrid(5, 5);
+function collectImages() {
+  for (let i = 1; i <= 3; i++) {
+    let cat = {};
+    cat.name = `cat_${i}`;
+    cat.image = `cats/cat${i}.jpg`;
+    images.push(cat);
+  };
+};
