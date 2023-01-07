@@ -1,18 +1,31 @@
 let container = document.getElementById("container");
+
 let image = document.getElementById("image");
-let startGameRandomButton = document.getElementById("startGameRandom");
-startGameRandomButton.addEventListener("click", () => {
-  startGameRandom();
-});
+
 let images = [];
 collectImages();
 
+let chosenImage = document.getElementById("chosenImage");
+let startGameChosenImageButton = document.getElementById("chosenImageButton");
+let startGameRandomButton = document.getElementById("startGameRandom");
 
-function startGameRandom() {
-  finishGame();
-  createGrid(5, 5);
+startGameRandomButton.addEventListener("click", () => {
+  startGameRandomImage();
+});
+
+startGameChosenImageButton.addEventListener("click", () => {
+  startGameChosenImage();
+}); 
+
+function startGameChosenImage() {
+  startGame();
+  let i = chosenImage.value;
+  image.src = images[i].image;
+}
+
+function startGameRandomImage() {
+  startGame();
   let randomImage = Math.floor(Math.random() * 3);
-  image.style.display = "block";
   image.src = images[randomImage].image;
 }
 
@@ -33,6 +46,12 @@ function createGrid(xAxis, yAxis) {
   );
     container.appendChild(newSquare);
   }
+};
+
+function startGame() {
+  finishGame();
+  createGrid(5, 5);
+  image.style.display = "block";
 };
 
 function finishGame() {
