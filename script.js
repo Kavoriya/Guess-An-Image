@@ -20,14 +20,19 @@ startGameChosenImageButton.addEventListener("click", () => {
 function startGameChosenImage() {
   startGame();
   let i = chosenImage.value;
+  if (i > images.length - 1) { 
+    i = images.length - 1
+  } else if (i < 0) {
+    i = 0
+  };
   image.src = images[i].image;
-}
+};
 
 function startGameRandomImage() {
   startGame();
   let randomImage = Math.floor(Math.random() * 3);
   image.src = images[randomImage].image;
-}
+};
 
 function createGrid(xAxis, yAxis) {
   container.style.gridTemplateColumns = `repeat(${xAxis}, ${600/xAxis}px)`;
