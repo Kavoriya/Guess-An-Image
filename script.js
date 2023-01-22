@@ -37,8 +37,7 @@ function startGameRandomImage() {
 function createGrid(xAxis, yAxis) {
   container.style.gridTemplateColumns = `repeat(${xAxis}, ${600/xAxis}px)`;
   container.style.gridTemplateRows = `repeat(${yAxis}, ${600/yAxis}px)`;
-  container.style.borderLeft = "1px solid black";
-  container.style.borderTop = "1px solid black";
+  container.style.border = "1px solid black";
   for (let i = 1; i <= (xAxis * yAxis); i++) {
     let newSquare = document.createElement("div");
     newSquare.textContent = i;
